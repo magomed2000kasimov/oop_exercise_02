@@ -32,33 +32,28 @@ void Count0(unsigned long long a, std::ostream &os, int *Count, bool flag) {
 }
 
 bit bit::operator&(const bit &other) const {
-    bit temp;
     unsigned long long temp_a = a & other.Hight();
     unsigned int temp_b = b & other.Low();
-    temp.Get(temp_a, temp_b);
+    bit temp(temp_a, temp_b);
     return temp;
 }
 
 bit bit::operator|(const bit &other) const {
-    bit temp;
     unsigned long long temp_a = a | other.Hight();
     unsigned int temp_b = b | other.Low();
-    temp.Get(temp_a, temp_b);
+    bit temp(temp_a, temp_b);
     return temp;
 }
 
 bit bit::operator^(const bit &other) const {
-    bit temp;
     unsigned long long temp_a = a ^other.Hight();
     unsigned int temp_b = b ^other.Low();
-    temp.Get(temp_a, temp_b);
+    bit temp(temp_a, temp_b);
     return temp;
 }
 
-bit bit::operator~() {
-    bit other;
-    other.a = ~a;
-    other.b = ~b;
+bit bit::operator~() const {
+    bit other(~a,~b);
     return other;
 }
 
@@ -107,54 +102,37 @@ unsigned int bit::Low() const {
     return b;
 }
 
-int bit::CountOfUnits() const {
-    return number(a) + number(b);
-
-}
-
 int bit::operator==(const bit &other) const {
     int i1 = number(a) + number(b);
-    int i2 = other.CountOfUnits();
-    if (i1 == i2)
-        return 1;
-    else
-        return 0;
+    int i2 = number(other.a) + number(other.b);
+    return i1 == i2;
 }
 
 int bit::operator<=(const bit &other) const {
     int i1 = number(a) + number(b);
-    int i2 = other.CountOfUnits();
-    if (i1 <= i2)
-        return 1;
-    else
-        return 0;
+    int i2 = number(other.a) + number(other.b);
+    return i1 <= i2;
+
 }
 
 int bit::operator>=(const bit &other) const {
     int i1 = number(a) + number(b);
-    int i2 = other.CountOfUnits();
-    if (i1 >= i2)
-        return 1;
-    else
-        return 0;
+    int i2 = number(other.a) + number(other.b);
+    return i1 >= i2;
+
 }
 
 int bit::operator<(const bit &other) const {
     int i1 = number(a) + number(b);
-    int i2 = other.CountOfUnits();
-    if (i1 < i2)
-        return 1;
-    else
-        return 0;
+    int i2 = number(other.a) + number(other.b);
+    return i1 < i2;
+
 }
 
 int bit::operator>(const bit &other) const {
     int i1 = number(a) + number(b);
-    int i2 = other.CountOfUnits();
-    if (i1 > i2)
-        return 1;
-    else
-        return 0;
+    int i2 = number(other.a) + number(other.b);
+    return i1 > i2;
 }
 
 int bit::Inclusion(const bit &other) const {

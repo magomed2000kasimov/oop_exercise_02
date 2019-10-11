@@ -17,7 +17,7 @@ private:
 public:
     bit();
 
-    bit(unsigned long long a1, int b1) {
+    bit(unsigned long long a1, unsigned int b1) {
         a = a1;
         b = b1;
     };
@@ -25,8 +25,6 @@ public:
     void ShiftLeft(int i);
 
     void ShiftRight(int i);
-
-    int CountOfUnits() const;
 
     int Inclusion(const bit &other) const;
 
@@ -42,7 +40,7 @@ public:
 
     bit operator^(const bit &other) const;
 
-    bit operator~();
+    bit operator~() const;
 
     int operator<=(const bit &other) const;
 
