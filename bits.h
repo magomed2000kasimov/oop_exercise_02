@@ -57,5 +57,6 @@ public:
     friend std::istream &operator>>(std::istream &is, bit &other);
 };
 
+bit operator "" _sr(const char *st, size_t siz)
 
 #endif //OOP_EXERCISE_02_BITS_H

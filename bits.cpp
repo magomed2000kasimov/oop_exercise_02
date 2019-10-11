@@ -196,3 +196,10 @@ std::istream &operator>>(std::istream &is, bit &other) {
     }
     return is;
 }
+
+bit operator "" _sr(const char *st, size_t siz) {
+    std::istringstream is(st);
+    bit val;
+    is >> val;
+    return val;
+}
