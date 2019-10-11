@@ -2,12 +2,7 @@
 #include <sstream>
 #include "bits.h"
 
-bit operator "" _sr(const char *st, size_t siz) {
-    std::istringstream is(st);
-    bit val;
-    is >> val;
-    return val;
-}
+
 
 int main() {
     bit a;
