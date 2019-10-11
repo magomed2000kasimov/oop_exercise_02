@@ -18,5 +18,6 @@ int main() {
     std::cout<<f;
     f = ~a;
     std::cout<<f;
+    bit x = "1234"_sr;
     return 0;
 }

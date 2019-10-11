@@ -3,7 +3,7 @@
 //
 
 #include "bits.h"
-
+#include <sstream>
 int number(unsigned long long m) {
     int i = 0;
     while (m > 0) {
